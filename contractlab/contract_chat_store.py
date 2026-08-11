@@ -92,6 +92,15 @@ class ContractChatStore:
         target = self._directory(conversation_id) / "conversation.json"
         return ContractConversation.model_validate_json(target.read_text(encoding="utf-8"))
 
+    def try_load(self, conversation_id: object) -> ContractConversation | None:
+        """Return a valid saved conversation without trusting stale UI state."""
+        if not isinstance(conversation_id, str):
+            return None
+        try:
+            return self.load(conversation_id)
+        except (OSError, ValueError):
+            return None
+
     def list(self) -> list[ContractConversation]:
         conversations: list[ContractConversation] = []
         for target in self.root.glob("*/conversation.json"):

@@ -65,10 +65,14 @@ st.warning(
 )
 
 conversations = store.list()
-if "contract_workspace_id" not in st.session_state:
-    current = conversations[0] if conversations else store.create()
-    st.session_state.contract_workspace_id = current.id
+conversation = store.try_load(st.session_state.get("contract_workspace_id"))
+if conversation is None:
+    conversation = conversations[0] if conversations else store.create()
+    st.session_state.contract_workspace_id = conversation.id
+    st.session_state.pop("contract_workspace_selector", None)
     conversations = store.list()
+else:
+    st.session_state.contract_workspace_id = conversation.id
 
 with st.sidebar:
     st.divider()
@@ -80,8 +84,6 @@ with st.sidebar:
         st.rerun()
     option_ids = [conversation.id for conversation in conversations]
     current_id = st.session_state.contract_workspace_id
-    if current_id not in option_ids:
-        option_ids.insert(0, current_id)
     labels = {conversation.id: conversation.title for conversation in conversations}
     selected_id = st.selectbox(
         "Conversation",
@@ -106,7 +108,12 @@ with st.sidebar:
         ),
     )
 
-conversation = store.load(st.session_state.contract_workspace_id)
+conversation = store.try_load(st.session_state.get("contract_workspace_id"))
+if conversation is None:
+    conversation = store.create()
+    st.session_state.contract_workspace_id = conversation.id
+    st.session_state.pop("contract_workspace_selector", None)
+    st.rerun()
 draft_mode = {
     "Auto": "auto",
     "Review and analyze": "review",

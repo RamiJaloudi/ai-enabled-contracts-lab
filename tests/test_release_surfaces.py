@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import ast
+import json
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -90,6 +91,53 @@ def test_hugging_face_repo_id_validation() -> None:
             pass
         else:
             raise AssertionError(f"Expected invalid repository ID: {invalid}")
+
+
+def test_hugging_face_downloader_validates_reviewed_bundle(tmp_path: Path) -> None:
+    from tools.download_huggingface_model import REQUIRED_FILES, validate_bundle
+
+    labels = {str(index): f"label_{index}" for index in range(41)}
+    reverse = {label: int(index) for index, label in labels.items()}
+    for filename in REQUIRED_FILES:
+        (tmp_path / filename).write_text("placeholder", encoding="utf-8")
+    (tmp_path / "config.json").write_text(
+        json.dumps(
+            {
+                "architectures": ["BertForSequenceClassification"],
+                "id2label": labels,
+                "label2id": reverse,
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    summary = validate_bundle(tmp_path)
+    assert summary == {
+        "files": 7,
+        "labels": 41,
+        "architecture": "BertForSequenceClassification",
+    }
+
+
+def test_hugging_face_downloader_has_no_token_argument() -> None:
+    from tools.download_huggingface_model import build_parser
+
+    help_text = build_parser().format_help()
+    assert "--repo-id" in help_text
+    assert "--revision" in help_text
+    assert "--output" in help_text
+    assert "--token" not in help_text
+
+
+def test_download_workflow_is_linked_from_release_docs() -> None:
+    for relative in (
+        "README.md",
+        "docs/HUGGING_FACE_RELEASE.md",
+        "docs/AI_Enabled_Contracts_Lab_User_Guide.md",
+    ):
+        content = read(relative)
+        assert "tools\\download_huggingface_model.py" in content
+        assert "hf auth login" in content
 
 
 def test_generated_v2_card_uses_exact_repo_and_saved_metrics() -> None:

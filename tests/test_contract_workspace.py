@@ -4,6 +4,7 @@ from email.message import EmailMessage
 from io import BytesIO
 from pathlib import Path
 from types import SimpleNamespace
+from uuid import UUID
 from zipfile import ZIP_DEFLATED, ZipFile
 
 import pytest
@@ -184,6 +185,15 @@ def test_local_store_round_trip_upload_messages_and_artifacts(tmp_path):
     assert cleared.documents[0].text.startswith("Termination")
 
 
+def test_local_store_safely_rejects_stale_conversation_ids(tmp_path):
+    root = tmp_path / "contract_chats"
+    store = ContractChatStore(root)
+
+    assert store.try_load("legacy-contract-chat") is None
+    assert store.try_load(None) is None
+    assert list(root.iterdir()) == []
+
+
 def test_workspace_orchestrator_allows_general_questions_and_protects_documents():
     llm = RecordingLLM()
     orchestrator = LegalAnalysisOrchestrator(
@@ -339,7 +349,12 @@ def test_contract_chat_accepts_two_consecutive_questions(monkeypatch, tmp_path):
         "contractlab.ui.cached_legal_ai_orchestrator",
         lambda: FakeWorkspaceOrchestrator(),
     )
-    app = AppTest.from_file(PROJECT_ROOT / "app_pages" / "contract_chat.py").run(timeout=30)
+    app = AppTest.from_file(PROJECT_ROOT / "app_pages" / "contract_chat.py")
+    app.session_state["contract_workspace_id"] = "legacy-contract-chat"
+    app.session_state["contract_workspace_selector"] = "legacy-contract-chat"
+    app = app.run(timeout=30)
+    assert not app.exception
+    UUID(str(app.session_state["contract_workspace_id"]))
     assert app.chat_input[0].placeholder == "Message Contract chat or add files"
     assert app.chat_input[0].proto.accept_file == 2
 

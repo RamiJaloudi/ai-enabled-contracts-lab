@@ -309,6 +309,52 @@ For the complete walkthrough, open the
 [Word user and developer guide](docs/AI_Enabled_Contracts_Lab_User_Guide.docx)
 or its [Markdown source](docs/AI_Enabled_Contracts_Lab_User_Guide.md).
 
+### Download and verify Contra v2
+
+After the model repository has been uploaded and your Hugging Face account has access, authenticate
+outside the app and run the project downloader:
+
+```powershell
+hf auth login
+hf auth whoami
+.\.venv\Scripts\python.exe tools\download_huggingface_model.py
+```
+
+The default destination is the Git-ignored `artifacts/models/contra-v2/` directory. The script
+downloads only the seven reviewed release files, checks available disk space, validates the 41-label
+mapping, and performs a local-only inference smoke test. Use a tag or full commit hash for a
+reproducible download:
+
+```powershell
+.\.venv\Scripts\python.exe tools\download_huggingface_model.py `
+  --revision FULL_COMMIT_HASH `
+  --output artifacts\models\contra-v2
+```
+
+The official CLI can also download the repository directly, but it does not run the project's
+bundle and inference checks:
+
+```powershell
+hf download rjaloudi/contra-contracts-bert-cuad-clause-classifier `
+  --local-dir artifacts\models\contra-v2
+```
+
+Transformers can load the private repository through the credentials saved by `hf auth login`:
+
+```python
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
+
+repo_id = "rjaloudi/contra-contracts-bert-cuad-clause-classifier"
+tokenizer = AutoTokenizer.from_pretrained(repo_id)
+model = AutoModelForSequenceClassification.from_pretrained(repo_id)
+```
+
+To guarantee offline reuse after running the project downloader, load the validated local directory
+with `local_files_only=True`. The official Hugging Face documentation covers
+[`snapshot_download`](https://huggingface.co/docs/huggingface_hub/en/guides/download),
+[`hf download`](https://huggingface.co/docs/huggingface_hub/en/guides/cli), and stored CLI
+authentication. Do not put a Hub token in a command, script, notebook, Streamlit widget, or chat.
+
 ## Contract Chat
 
 Contract Chat behaves as a continuing conversation. A user may ask a general contract question
