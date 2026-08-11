@@ -1,0 +1,45 @@
+{
+  "name": "Synthetic 396-label contract clause corpus",
+  "audited": "2026-08-11",
+  "source_file": "datasets/contract_clauses_all_39600.csv",
+  "sha256": "c727233f610710fa69eef174a55134af4be3ef2db31f539cb9df26435cc653bc",
+  "duplicate_copy": "datasets/bert_contract_clause_dataset_39600/contract_clauses_all_39600.csv",
+  "rows": 39600,
+  "labels": 396,
+  "categories": 21,
+  "declared_source_values": {
+    "synthetic": 39600
+  },
+  "declared_splits": {
+    "train": 31680,
+    "validation": 3960,
+    "test": 3960
+  },
+  "quality": {
+    "unique_texts": 23870,
+    "duplicate_text_rows": 15730,
+    "texts_assigned_multiple_labels": 1897,
+    "exact_texts_crossing_declared_splits": 3680,
+    "label_phrase_in_text_percent": 73.48,
+    "template_fingerprints": 4835,
+    "rows_in_cross_split_template_groups": 34058,
+    "evaluation_rows_similarity_at_least_0_80_percent": 93.38,
+    "median_max_same_label_train_similarity": 0.9546
+  },
+  "compatibility": {
+    "contra_cuad_labels": 41,
+    "exact_normalized_label_overlap": 13,
+    "integration": "Separate 396-label experimental classifier task; do not merge classifier heads."
+  },
+  "provenance": "User supplied; generation method, author, source inputs, and model/version were not included.",
+  "license": "UNSPECIFIED - LOCAL ONLY",
+  "publication": "Raw files and archive are Git-ignored pending documented redistribution rights.",
+  "workbench_policy": "All 396 labels are available through an explicit experimental opt-in. Template fingerprints replace absent contract IDs for grouped splitting. Supplied train/validation/test boundaries are retained only as metadata and are not trusted for evaluation.",
+  "prepared_template_groups": 3986,
+  "limitations": [
+    "Synthetic text is not an independent real-contract holdout.",
+    "Exact duplicates, conflicting labels, template reuse, and label-name leakage can inflate metrics.",
+    "Template grouping reduces but cannot prove elimination of semantic leakage.",
+    "Use unchanged real CUAD or another independently sourced, licensed real-contract holdout for comparison."
+  ]
+}

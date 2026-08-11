@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use AI-Enabled Contracts Lab, cite this software and the CUAD paper."
+title: "AI-Enabled Contracts Lab"
+type: software
+version: 0.1.0
+date-released: 2026-08-11
+license: MIT
+authors:
+  - family-names: "Jaloudi"
+    given-names: "Rami"
+repository-code: "https://github.com/RamiJaloudi/ai-enabled-contracts-lab"
+keywords:
+  - legal AI
+  - contract analysis
+  - fine-tuning
+  - PyTorch
+  - Streamlit
+references:
+  - type: article
+    title: "CUAD: An Expert-Annotated NLP Dataset for Legal Contract Review"
+    authors:
+      - family-names: "Hendrycks"
+        given-names: "Dan"
+      - family-names: "Burns"
+        given-names: "Collin"
+      - family-names: "Chen"
+        given-names: "Anya"
+      - family-names: "Ball"
+        given-names: "Spencer"
+    year: 2021
+    url: "https://arxiv.org/abs/2103.06268"

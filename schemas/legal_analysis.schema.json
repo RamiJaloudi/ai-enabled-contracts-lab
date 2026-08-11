@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegalAnalysisResult",
+  "type": "object",
+  "required": ["domain", "issues"],
+  "properties": {
+    "domain": {"type": "string"},
+    "jurisdiction": {"type": ["string", "null"]},
+    "jurisdiction_confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "classifier_predictions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "confidence"],
+        "properties": {
+          "label": {"type": "string"},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "model_version": {"type": "string", "default": "unknown"},
+          "taxonomy_version": {"type": "string", "default": "unknown"},
+          "prediction_type": {"enum": ["domain", "doctrine"], "default": "doctrine"},
+          "rank": {"type": "integer", "minimum": 1, "default": 1},
+          "calibrated": {"type": "boolean", "default": false},
+          "calibration_version": {"type": "string", "default": "uncalibrated"},
+          "passage_ids": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "taxonomy_label",
+          "issue",
+          "analysis_confidence",
+          "rule",
+          "supporting_facts",
+          "adverse_facts",
+          "missing_facts",
+          "application",
+          "counterarguments",
+          "jurisdiction_status",
+          "conclusion"
+        ],
+        "properties": {
+          "taxonomy_label": {"type": "string", "minLength": 1},
+          "issue": {"type": "string", "minLength": 1},
+          "analysis_confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "rule": {"type": "string", "minLength": 1},
+          "supporting_facts": {"type": "array", "items": {"type": "string"}},
+          "adverse_facts": {"type": "array", "items": {"type": "string"}},
+          "missing_facts": {"type": "array", "items": {"type": "string"}},
+          "application": {"type": "string", "minLength": 1},
+          "counterarguments": {"type": "array", "items": {"type": "string"}},
+          "jurisdiction_status": {
+            "enum": [
+              "GENERAL_PRINCIPLE",
+              "JURISDICTION_SPECIFIC_VERIFICATION_REQUIRED",
+              "VERIFIED"
+            ]
+          },
+          "conclusion": {"type": "string", "minLength": 1},
+          "evidence_passage_ids": {"type": "array", "items": {"type": "string"}},
+          "confidence_basis": {"type": ["string", "null"]},
+          "authorities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["text", "status", "verification_required"],
+              "properties": {
+                "text": {"type": "string"},
+                "status": {"enum": ["USER_SUPPLIED", "EXTERNALLY_VERIFIED", "UNVERIFIED"]},
+                "verification_required": {"type": "boolean"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "domain_predictions": {"type": "array"},
+    "doctrine_predictions": {"type": "array"},
+    "route_status": {"enum": ["AUTO_ROUTE", "REVIEW_REQUIRED", "ABSTAIN"]},
+    "route_reasons": {"type": "array", "items": {"type": "string"}},
+    "audit": {"type": ["object", "null"]}
+  }
+}

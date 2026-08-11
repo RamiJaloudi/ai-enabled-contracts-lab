@@ -1,0 +1,16 @@
+{
+  "name": "CUAD classifier rows converted from grounded clause-QA records",
+  "source": "https://github.com/The-Atticus-Project/cuad",
+  "license": "CC BY 4.0",
+  "transformation": "Assistant targets from clause_qa records become classifier text; category becomes label; contract_title becomes contract_id; exact duplicates are removed.",
+  "input_rows": 18008,
+  "output_rows": 6702,
+  "contracts": 510,
+  "labels": 41,
+  "source_splits": {
+    "train": 408,
+    "val": 51,
+    "test": 51
+  },
+  "contract_overlap_verified": true
+}

@@ -1,0 +1,40 @@
+name: Bug report
+description: Report reproducible behavior that appears incorrect.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not attach contracts, credentials, or private training data.
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the behavior and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Use the synthetic dataset where possible.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: AI-Enabled Contracts Lab version or commit
+    validations:
+      required: true
+  - type: dropdown
+    id: profile
+    attributes:
+      label: PyTorch profile
+      options: [CPU, CUDA 12.9, Unknown]
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Windows/Linux version, Python, GPU, driver, and browser.

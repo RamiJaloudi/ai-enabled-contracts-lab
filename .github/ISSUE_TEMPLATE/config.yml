@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Private security report
+    url: https://github.com/RamiJaloudi/ai-enabled-contracts-lab/security/advisories/new
+    about: Use GitHub's private vulnerability-reporting channel for security issues.

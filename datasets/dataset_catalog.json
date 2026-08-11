@@ -1,0 +1,150 @@
+{
+  "audited": "2026-08-11",
+  "source": "The Atticus Project CUAD v1",
+  "license": "CC BY 4.0",
+  "datasets": [
+    {
+      "name": "CUAD instruction sample",
+      "path": "sample_200.jsonl",
+      "purpose": "Instruction/chat learning sample",
+      "rows": 200,
+      "contracts": 68,
+      "labels_or_tasks": "4 tasks / 25 clause labels",
+      "license": "CC BY 4.0",
+      "status": "Public; deterministic CUAD derivative"
+    },
+    {
+      "name": "CUAD classifier sample",
+      "path": "cuad_classifier_sample.csv",
+      "purpose": "Fast classifier learning workflow",
+      "rows": 75,
+      "contracts": 68,
+      "labels_or_tasks": "25 labels",
+      "license": "CC BY 4.0",
+      "status": "Public; classifier-ready"
+    },
+    {
+      "name": "CUAD full classifier derivative",
+      "path": "clauses.csv",
+      "purpose": "Full 41-label classifier training",
+      "rows": 6702,
+      "contracts": 510,
+      "labels_or_tasks": "41 labels",
+      "license": "CC BY 4.0",
+      "status": "Public; metadata-complete replacement"
+    },
+    {
+      "name": "CUAD instruction train split",
+      "path": "train.jsonl/train.jsonl",
+      "purpose": "Instruction/chat fine-tuning",
+      "rows": 14491,
+      "contracts": 408,
+      "labels_or_tasks": "4 deterministic tasks",
+      "license": "CC BY 4.0",
+      "status": "Public through Git LFS"
+    },
+    {
+      "name": "CUAD instruction validation split",
+      "path": "val.jsonl/val.jsonl",
+      "purpose": "Instruction/chat validation",
+      "rows": 1784,
+      "contracts": 51,
+      "labels_or_tasks": "4 deterministic tasks",
+      "license": "CC BY 4.0",
+      "status": "Public through Git LFS"
+    },
+    {
+      "name": "CUAD instruction test split",
+      "path": "test.jsonl/test.jsonl",
+      "purpose": "Instruction/chat held-out evaluation",
+      "rows": 1733,
+      "contracts": 51,
+      "labels_or_tasks": "4 deterministic tasks",
+      "license": "CC BY 4.0",
+      "status": "Public through Git LFS"
+    },
+    {
+      "name": "Contract and clause taxonomy",
+      "path": "contract_taxonomy.json",
+      "purpose": "Interactive definitions, aliases, typical clauses, and review questions",
+      "records": {
+        "domains": 10,
+        "contract_types": 47,
+        "clause_definitions": 45
+      },
+      "license": "CC BY 4.0",
+      "source": "AI-Enabled Contracts Lab contributors",
+      "status": "Public; project-authored educational reference"
+    },
+    {
+      "name": "Synthetic 396-label clause corpus",
+      "path": "contract_clauses_all_39600.csv",
+      "purpose": "Experimental 396-label classifier pretraining and taxonomy coverage",
+      "rows": 39600,
+      "contracts": 3986,
+      "labels_or_tasks": "396 labels / 21 categories",
+      "license": "UNSPECIFIED - LOCAL ONLY",
+      "source": "User supplied synthetic corpus",
+      "local_only": true,
+      "included": false,
+      "audit": "synthetic_396_audit.json",
+      "status": "Local opt-in; 3,986 derived template groups (not source contracts); raw files Git-ignored"
+    },
+    {
+      "name": "Master synthetic legal dataset manifest",
+      "path": "manifest.csv",
+      "purpose": "Index for a future hierarchical legal-classification experiment",
+      "rows": 28,
+      "contracts": 0,
+      "labels_or_tasks": "560,000 examples declared / 1,120 domain-label assignments",
+      "license": "UNSPECIFIED - LOCAL ONLY",
+      "source": "User supplied synthetic dataset manifest",
+      "local_only": true,
+      "included": false,
+      "audit": "master_taxonomy_audit.json",
+      "status": "Bundle present; all 28 archives and 560,000 records audited"
+    },
+    {
+      "name": "Master legal label taxonomy",
+      "path": "master_taxonomy.json",
+      "purpose": "28-domain label registry for hierarchical legal classification",
+      "rows": 1120,
+      "contracts": 0,
+      "labels_or_tasks": "1,111 unique labels / 1,120 domain-qualified labels",
+      "license": "UNSPECIFIED - LOCAL ONLY",
+      "source": "User supplied synthetic taxonomy",
+      "local_only": true,
+      "included": false,
+      "audit": "master_taxonomy_audit.json",
+      "status": "Metadata ready; label names only, with no examples or definitions"
+    },
+    {
+      "name": "Legal multidomain all-fields bundle",
+      "path": "legal_multidomain_all_fields_bundle.zip",
+      "purpose": "Source bundle for Contra-Law Experimental classification and later retrieval research",
+      "rows": 560000,
+      "contracts": 0,
+      "labels_or_tasks": "28 domains / 1,120 domain-qualified labels",
+      "license": "UNSPECIFIED - LOCAL ONLY",
+      "source": "User supplied synthetic all-fields bundle",
+      "local_only": true,
+      "included": false,
+      "audit": "master_taxonomy_audit.json",
+      "status": "Available locally; severe answer/template leakage; raw bundle Git-ignored"
+    },
+    {
+      "name": "ContractNLI optional extension",
+      "path": null,
+      "purpose": "Future NDA entailment and evidence-span research",
+      "records": {
+        "contracts": 607,
+        "hypotheses": 17
+      },
+      "license": "CC BY 4.0 subject to official click-through terms",
+      "source": "https://stanfordnlp.github.io/contract-nli/",
+      "requires_license_acceptance": true,
+      "included": false,
+      "status": "Cataloged only; user must review and accept official terms"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "bert": {
+    "top_k": 5,
+    "domain_threshold": 0.5,
+    "doctrine_review_threshold": 0.2,
+    "auto_route_threshold": 0.6,
+    "multi_label": true,
+    "minimum_margin": 0.15,
+    "max_length": 256
+  },
+  "llm": {
+    "provider": "ollama",
+    "base_url": "http://127.0.0.1:11434",
+    "model": "gpt-oss:latest",
+    "fallback_model": "phi3:latest",
+    "temperature": 0.2,
+    "drafting_temperature": 0.0,
+    "max_output_tokens": 8192,
+    "context_window": 16384,
+    "max_context_characters": 48000,
+    "requires_structured_output": true,
+    "schema": "schemas/legal_analysis.schema.json",
+    "allow_unverified_citations": false,
+    "rag_enabled": false
+  },
+  "security": {
+    "maximum_request_characters": 250000,
+    "maximum_passage_characters": 2400,
+    "passage_overlap_characters": 240,
+    "maximum_passages": 200,
+    "maximum_history_messages": 10,
+    "maximum_history_characters": 16000,
+    "maximum_concurrent_requests": 4
+  },
+  "contract_chat": {
+    "storage_path": "artifacts/contract_chats",
+    "maximum_files_per_message": 10,
+    "maximum_file_bytes": 26214400,
+    "maximum_archive_entries": 100,
+    "maximum_archive_uncompressed_bytes": 52428800,
+    "maximum_documents_per_chat": 50,
+    "maximum_spreadsheet_cells": 100000,
+    "maximum_ocr_pages": 50,
+    "maximum_extracted_characters_per_document": 250000
+  },
+  "prompts": {
+    "system": "prompts/system_prompt.md",
+    "issue_spotting": "prompts/issue_spotting.md",
+    "analysis": "prompts/structured_legal_analysis.md",
+    "jurisdiction": "prompts/jurisdiction.md",
+    "bridge": "prompts/bert_llm_bridge.md",
+    "document_analysis": "prompts/document_analysis.md",
+    "contract_review": "prompts/contract_review.md",
+    "evaluation_chat": "prompts/evaluation_chat.md",
+    "contract_drafting": "prompts/contract_drafting.md",
+    "contract_workspace_chat": "prompts/contract_workspace_chat.md"
+  }
+}

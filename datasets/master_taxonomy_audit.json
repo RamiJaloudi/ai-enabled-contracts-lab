@@ -1,0 +1,56 @@
+{
+  "name": "Master synthetic legal taxonomy experiment",
+  "audited": "2026-08-11",
+  "manifest": "datasets/manifest.csv",
+  "bundle": "datasets/legal_multidomain_all_fields_bundle.zip",
+  "taxonomy": "datasets/master_taxonomy.json",
+  "declared": {
+    "domains": 28,
+    "examples": 560000,
+    "label_assignments": 1120,
+    "unique_labels": 1111,
+    "examples_per_domain": 20000,
+    "labels_per_domain": 40,
+    "train_per_domain": 16000,
+    "validation_per_domain": 2000,
+    "test_per_domain": 2000
+  },
+  "consistency": {
+    "manifest_domains_match_taxonomy": true,
+    "split_counts_sum_to_examples": true,
+    "labels_per_domain_match_taxonomy": true,
+    "labels_reused_across_domains": 9,
+    "exact_overlap_with_synthetic_396_labels": 23,
+    "exact_overlap_with_cuad_41_labels": 1
+  },
+  "availability": {
+    "referenced_archives": 28,
+    "archives_present": 28,
+    "archives_missing": 0,
+    "training_examples_present": 560000,
+    "ready_to_prepare_classifier": true
+  },
+  "quality": {
+    "unique_ids": 560000,
+    "unique_texts": 227261,
+    "duplicate_text_rows": 332739,
+    "exact_texts_crossing_declared_splits": 54696,
+    "rows_in_cross_split_exact_texts": 293246,
+    "texts_assigned_multiple_domain_labels": 1142,
+    "label_phrase_in_text_percent": 100.0,
+    "template_fingerprints": 158,
+    "template_fingerprints_crossing_splits": 145,
+    "rows_in_cross_split_template_fingerprints": 559968
+  },
+  "recommended_task": "Hierarchical or composite-label legal classification: domain then domain-qualified label. Keep separate from Contra's contract-clause classifier head.",
+  "provenance": "User supplied; generator, source inputs, generation prompts, and model/version were not included.",
+  "license": "UNSPECIFIED - LOCAL ONLY",
+  "publication": "Manifest, taxonomy, and bundle are Git-ignored pending documented redistribution rights.",
+  "limitations": [
+    "The taxonomy contains label names but no reviewed legal definitions.",
+    "All text inputs contain the target label phrase, making classification answer-revealing.",
+    "Nine label names occur in more than one domain and require domain-qualified IDs.",
+    "Synthetic evaluation is not an independent measure of real-world legal performance.",
+    "Structured analysis fields are generic scaffolding, not authoritative statements of law."
+  ]
+}

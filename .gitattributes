@@ -1,0 +1,12 @@
+* text=auto
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.docx binary
+*.safetensors binary
+datasets/test.jsonl/test.jsonl filter=lfs diff=lfs merge=lfs -text
+datasets/train.jsonl/train.jsonl filter=lfs diff=lfs merge=lfs -text
+datasets/val.jsonl/val.jsonl filter=lfs diff=lfs merge=lfs -text

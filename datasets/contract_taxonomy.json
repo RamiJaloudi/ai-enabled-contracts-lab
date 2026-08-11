@@ -1,0 +1,1651 @@
+{
+  "metadata": {
+    "title": "AI-Enabled Contracts Lab Contract Type and Clause Taxonomy",
+    "version": "0.1.0",
+    "created": "2026-08-11",
+    "license": "CC BY 4.0",
+    "author": "AI-Enabled Contracts Lab contributors",
+    "scope": "Non-exhaustive, jurisdiction-neutral educational taxonomy",
+    "limitations": "Definitions describe common drafting functions, not legal requirements or advice. Applicability and enforceability vary by jurisdiction, facts, parties, and document purpose."
+  },
+  "domains": [
+    {
+      "id": "commercial",
+      "name": "Commercial",
+      "definition": "Agreements governing goods, services, distribution, licensing, and ongoing business relationships.",
+      "contract_type_ids": [
+        "nda",
+        "master_services",
+        "statement_of_work",
+        "saas",
+        "supply",
+        "distribution"
+      ]
+    },
+    {
+      "id": "corporate",
+      "name": "Corporate",
+      "definition": "Agreements concerning ownership, investment, governance, combinations, and business transfers.",
+      "contract_type_ids": [
+        "stock_purchase",
+        "asset_purchase",
+        "merger",
+        "shareholders",
+        "joint_venture",
+        "subscription"
+      ]
+    },
+    {
+      "id": "employment",
+      "name": "Employment",
+      "definition": "Agreements governing work relationships, compensation, duties, separation, and labor terms.",
+      "contract_type_ids": [
+        "employment_agreement",
+        "offer_letter",
+        "independent_contractor",
+        "employment_separation",
+        "restrictive_covenant",
+        "collective_bargaining"
+      ]
+    },
+    {
+      "id": "family",
+      "name": "Family",
+      "definition": "Agreements concerning family finances, property, support, and parenting, subject to jurisdiction-specific law and court review.",
+      "contract_type_ids": [
+        "prenuptial",
+        "postnuptial",
+        "marital_settlement",
+        "family_separation",
+        "parenting_plan"
+      ]
+    },
+    {
+      "id": "real_estate",
+      "name": "Real Estate",
+      "definition": "Agreements concerning ownership, transfer, possession, construction, or use of real property.",
+      "contract_type_ids": [
+        "commercial_lease",
+        "residential_lease",
+        "real_estate_purchase",
+        "construction",
+        "easement"
+      ]
+    },
+    {
+      "id": "finance",
+      "name": "Finance",
+      "definition": "Agreements creating or supporting credit, repayment, collateral, guarantees, and financial covenants.",
+      "contract_type_ids": [
+        "loan",
+        "credit_facility",
+        "promissory_note",
+        "security_agreement",
+        "guaranty"
+      ]
+    },
+    {
+      "id": "ip_technology",
+      "name": "Ip Technology",
+      "definition": "Agreements governing intellectual property, software, data, technology services, and related rights.",
+      "contract_type_ids": [
+        "software_license",
+        "patent_license",
+        "trademark_license",
+        "data_processing_addendum"
+      ]
+    },
+    {
+      "id": "consumer",
+      "name": "Consumer",
+      "definition": "Agreements for products or services supplied to individuals, subject to mandatory consumer-protection law.",
+      "contract_type_ids": [
+        "terms_of_service",
+        "consumer_subscription",
+        "consumer_warranty"
+      ]
+    },
+    {
+      "id": "government",
+      "name": "Government",
+      "definition": "Agreements involving public procurement, grants, and flow-down requirements.",
+      "contract_type_ids": [
+        "procurement",
+        "grant",
+        "government_subcontract"
+      ]
+    },
+    {
+      "id": "healthcare",
+      "name": "Healthcare",
+      "definition": "Agreements concerning health services, protected data, research, providers, and regulated relationships.",
+      "contract_type_ids": [
+        "business_associate",
+        "provider_agreement",
+        "clinical_trial",
+        "data_use"
+      ]
+    }
+  ],
+  "contract_types": [
+    {
+      "id": "nda",
+      "domain": "commercial",
+      "name": "Non-disclosure agreement (NDA)",
+      "definition": "Protects confidential information disclosed for a defined purpose and may be mutual or unilateral.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "term",
+        "confidentiality",
+        "confidential_definition",
+        "confidential_exclusions",
+        "use_restriction",
+        "representatives",
+        "compelled_disclosure",
+        "standard_of_care",
+        "return_destruction",
+        "survival",
+        "ip_ownership",
+        "termination",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "master_services",
+      "domain": "commercial",
+      "name": "Master services agreement",
+      "definition": "Sets reusable legal and commercial terms for services ordered through statements of work.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "scope",
+        "fees_payment",
+        "term",
+        "termination",
+        "confidentiality",
+        "ip_ownership",
+        "warranties",
+        "indemnity",
+        "liability_limit",
+        "assignment",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "statement_of_work",
+      "domain": "commercial",
+      "name": "Statement of work",
+      "definition": "Defines project-specific scope, deliverables, schedule, responsibilities, and fees under a broader agreement.",
+      "typical_clause_ids": [
+        "parties",
+        "scope",
+        "deliverables",
+        "acceptance",
+        "fees_payment",
+        "term",
+        "termination_effects"
+      ]
+    },
+    {
+      "id": "saas",
+      "domain": "commercial",
+      "name": "Software-as-a-service agreement",
+      "definition": "Governs hosted software access, service levels, data, security, support, and subscription payment.",
+      "typical_clause_ids": [
+        "scope",
+        "fees_payment",
+        "term",
+        "renewal",
+        "termination",
+        "license_grant",
+        "data_rights",
+        "privacy_security",
+        "confidentiality",
+        "warranties",
+        "disclaimer",
+        "indemnity",
+        "liability_limit"
+      ]
+    },
+    {
+      "id": "supply",
+      "domain": "commercial",
+      "name": "Supply agreement",
+      "definition": "Governs repeated supply of goods, forecasts, ordering, delivery, quality, and payment.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "scope",
+        "fees_payment",
+        "term",
+        "termination",
+        "warranties",
+        "indemnity",
+        "liability_limit",
+        "force_majeure",
+        "assignment"
+      ]
+    },
+    {
+      "id": "distribution",
+      "domain": "commercial",
+      "name": "Distribution agreement",
+      "definition": "Authorizes distribution or resale within defined products, channels, territory, and restrictions.",
+      "typical_clause_ids": [
+        "scope",
+        "fees_payment",
+        "term",
+        "termination",
+        "license_grant",
+        "confidentiality",
+        "restrictive_covenants",
+        "warranties",
+        "indemnity",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "stock_purchase",
+      "domain": "corporate",
+      "name": "Stock purchase agreement",
+      "definition": "Transfers shares or other equity interests from sellers to buyers.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "transaction_terms",
+        "warranties",
+        "covenants",
+        "conditions_precedent",
+        "indemnity",
+        "confidentiality",
+        "termination",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "asset_purchase",
+      "domain": "corporate",
+      "name": "Asset purchase agreement",
+      "definition": "Transfers specified assets and assumed liabilities of a business.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "transaction_terms",
+        "warranties",
+        "indemnity",
+        "confidentiality",
+        "termination",
+        "assignment",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "merger",
+      "domain": "corporate",
+      "name": "Merger agreement",
+      "definition": "Sets terms and conditions for combining entities through a statutory merger or similar transaction.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "transaction_terms",
+        "warranties",
+        "indemnity",
+        "confidentiality",
+        "termination",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "shareholders",
+      "domain": "corporate",
+      "name": "Shareholders agreement",
+      "definition": "Governs ownership, voting, transfer restrictions, governance, and exit rights among shareholders.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "term",
+        "assignment",
+        "restrictive_covenants",
+        "confidentiality",
+        "dispute_resolution",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "joint_venture",
+      "domain": "corporate",
+      "name": "Joint venture agreement",
+      "definition": "Creates and governs a shared venture, including contributions, control, economics, and exit.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "scope",
+        "fees_payment",
+        "ip_ownership",
+        "confidentiality",
+        "termination",
+        "dispute_resolution",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "subscription",
+      "domain": "corporate",
+      "name": "Securities subscription agreement",
+      "definition": "Documents an investor's agreement to purchase securities subject to stated terms and representations.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "transaction_terms",
+        "warranties",
+        "conditions_precedent",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "employment_agreement",
+      "domain": "employment",
+      "name": "Employment agreement",
+      "definition": "Defines an employee's position, compensation, duties, benefits, restrictions, and termination terms.",
+      "typical_clause_ids": [
+        "parties",
+        "employment_terms",
+        "term",
+        "termination",
+        "severance",
+        "confidentiality",
+        "invention_assignment",
+        "restrictive_covenants",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "offer_letter",
+      "domain": "employment",
+      "name": "Offer letter",
+      "definition": "Summarizes proposed employment terms and conditions before or at hire.",
+      "typical_clause_ids": [
+        "parties",
+        "employment_terms",
+        "term",
+        "termination",
+        "confidentiality"
+      ]
+    },
+    {
+      "id": "independent_contractor",
+      "domain": "employment",
+      "name": "Independent contractor agreement",
+      "definition": "Governs services by a non-employee contractor and allocates status, payment, IP, confidentiality, and risk.",
+      "typical_clause_ids": [
+        "parties",
+        "scope",
+        "deliverables",
+        "fees_payment",
+        "term",
+        "termination",
+        "confidentiality",
+        "ip_ownership",
+        "invention_assignment",
+        "indemnity",
+        "liability_limit"
+      ]
+    },
+    {
+      "id": "employment_separation",
+      "domain": "employment",
+      "name": "Employment separation agreement",
+      "definition": "Documents employment separation, payments, releases, return of property, and continuing obligations.",
+      "typical_clause_ids": [
+        "parties",
+        "fees_payment",
+        "severance",
+        "confidentiality",
+        "return_destruction",
+        "survival",
+        "restrictive_covenants",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "restrictive_covenant",
+      "domain": "employment",
+      "name": "Restrictive covenant agreement",
+      "definition": "Contains non-competition, non-solicitation, confidentiality, or related post-relationship restrictions.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "confidentiality",
+        "restrictive_covenants",
+        "term",
+        "survival",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "collective_bargaining",
+      "domain": "employment",
+      "name": "Collective bargaining agreement",
+      "definition": "Sets collectively negotiated wages, hours, benefits, procedures, and other working conditions.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "employment_terms",
+        "term",
+        "dispute_resolution",
+        "termination",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "prenuptial",
+      "domain": "family",
+      "name": "Premarital agreement",
+      "definition": "Addresses property, debt, support, and related rights before marriage, subject to applicable law.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "property_division",
+        "support",
+        "warranties",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "postnuptial",
+      "domain": "family",
+      "name": "Postmarital agreement",
+      "definition": "Addresses spouses' financial and property arrangements after marriage, subject to applicable law.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "property_division",
+        "support",
+        "warranties",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "marital_settlement",
+      "domain": "family",
+      "name": "Marital settlement agreement",
+      "definition": "Resolves property, debt, support, and related issues in connection with separation or dissolution.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "property_division",
+        "support",
+        "fees_payment",
+        "dispute_resolution",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "family_separation",
+      "domain": "family",
+      "name": "Family separation agreement",
+      "definition": "Sets agreed financial and personal arrangements while family-law parties live separately.",
+      "typical_clause_ids": [
+        "parties",
+        "property_division",
+        "support",
+        "parenting",
+        "dispute_resolution",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "parenting_plan",
+      "domain": "family",
+      "name": "Parenting plan",
+      "definition": "Documents custody, decision-making, parenting time, communication, and related child-focused arrangements.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "parenting",
+        "dispute_resolution",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "commercial_lease",
+      "domain": "real_estate",
+      "name": "Commercial lease",
+      "definition": "Governs possession and use of commercial premises, rent, maintenance, risk, default, and remedies.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "scope",
+        "fees_payment",
+        "term",
+        "renewal",
+        "termination",
+        "insurance",
+        "finance_terms",
+        "assignment",
+        "force_majeure",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "residential_lease",
+      "domain": "real_estate",
+      "name": "Residential lease",
+      "definition": "Governs possession and use of residential premises subject to mandatory local law.",
+      "typical_clause_ids": [
+        "parties",
+        "scope",
+        "fees_payment",
+        "term",
+        "renewal",
+        "termination",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "real_estate_purchase",
+      "domain": "real_estate",
+      "name": "Real estate purchase agreement",
+      "definition": "Sets terms for purchase and sale of real property.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "transaction_terms",
+        "warranties",
+        "conditions_precedent",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "construction",
+      "domain": "real_estate",
+      "name": "Construction agreement",
+      "definition": "Governs project scope, price, schedule, changes, payment, insurance, and completion.",
+      "typical_clause_ids": [
+        "parties",
+        "scope",
+        "deliverables",
+        "acceptance",
+        "fees_payment",
+        "term",
+        "termination",
+        "warranties",
+        "indemnity",
+        "liability_limit",
+        "force_majeure"
+      ]
+    },
+    {
+      "id": "easement",
+      "domain": "real_estate",
+      "name": "Easement agreement",
+      "definition": "Creates or documents rights to use another person's real property for a defined purpose.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "scope",
+        "term",
+        "assignment",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "loan",
+      "domain": "finance",
+      "name": "Loan agreement",
+      "definition": "Documents a lender's extension of credit and the borrower's repayment and covenant obligations.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "fees_payment",
+        "term",
+        "finance_terms",
+        "audit_records",
+        "assignment",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "credit_facility",
+      "domain": "finance",
+      "name": "Credit agreement",
+      "definition": "Creates revolving, term, or other credit facilities with borrowing conditions and lender protections.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "fees_payment",
+        "term",
+        "transaction_terms",
+        "finance_terms",
+        "audit_records",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "promissory_note",
+      "domain": "finance",
+      "name": "Promissory note",
+      "definition": "Contains a written promise to pay a stated debt according to specified terms.",
+      "typical_clause_ids": [
+        "parties",
+        "fees_payment",
+        "term",
+        "finance_terms",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "security_agreement",
+      "domain": "finance",
+      "name": "Security agreement",
+      "definition": "Grants a security interest in collateral to secure an obligation.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "finance_terms",
+        "audit_records",
+        "assignment",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "guaranty",
+      "domain": "finance",
+      "name": "Guaranty",
+      "definition": "Creates a guarantor's obligation concerning another person's debt or performance.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "fees_payment",
+        "finance_terms",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "software_license",
+      "domain": "ip_technology",
+      "name": "Software license agreement",
+      "definition": "Grants rights to use software subject to scope, restrictions, fees, support, warranties, and liability terms.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "scope",
+        "license_grant",
+        "fees_payment",
+        "term",
+        "termination",
+        "ip_ownership",
+        "privacy_security",
+        "warranties",
+        "disclaimer",
+        "liability_limit"
+      ]
+    },
+    {
+      "id": "patent_license",
+      "domain": "ip_technology",
+      "name": "Patent license",
+      "definition": "Grants defined rights under specified patents subject to field, territory, royalties, and other conditions.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "license_grant",
+        "fees_payment",
+        "term",
+        "termination",
+        "ip_ownership",
+        "audit_records",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "trademark_license",
+      "domain": "ip_technology",
+      "name": "Trademark license",
+      "definition": "Permits use of specified marks subject to quality control, form, territory, and brand requirements.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "license_grant",
+        "fees_payment",
+        "term",
+        "termination",
+        "ip_ownership",
+        "audit_records"
+      ]
+    },
+    {
+      "id": "data_processing_addendum",
+      "domain": "ip_technology",
+      "name": "Data processing addendum",
+      "definition": "Defines privacy and security duties for processing personal information on another party's behalf.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "use_restriction",
+        "privacy_security",
+        "audit_records",
+        "compelled_disclosure",
+        "return_destruction",
+        "liability_limit"
+      ]
+    },
+    {
+      "id": "terms_of_service",
+      "domain": "consumer",
+      "name": "Terms of service",
+      "definition": "Sets rules for access to and use of a product, website, platform, or service.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "scope",
+        "fees_payment",
+        "term",
+        "renewal",
+        "termination",
+        "privacy_security",
+        "license_grant",
+        "disclaimer",
+        "liability_limit",
+        "dispute_resolution"
+      ]
+    },
+    {
+      "id": "consumer_subscription",
+      "domain": "consumer",
+      "name": "Consumer subscription agreement",
+      "definition": "Governs recurring consumer access, charges, renewal, cancellation, and service terms.",
+      "typical_clause_ids": [
+        "parties",
+        "scope",
+        "fees_payment",
+        "term",
+        "renewal",
+        "termination",
+        "privacy_security",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "consumer_warranty",
+      "domain": "consumer",
+      "name": "Consumer warranty",
+      "definition": "States repair, replacement, refund, exclusions, duration, and claim procedures for a product or service.",
+      "typical_clause_ids": [
+        "parties",
+        "scope",
+        "term",
+        "warranties",
+        "disclaimer",
+        "liability_limit",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "procurement",
+      "domain": "government",
+      "name": "Government procurement contract",
+      "definition": "Governs acquisition of goods or services by a public entity under applicable procurement rules.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "scope",
+        "deliverables",
+        "acceptance",
+        "fees_payment",
+        "term",
+        "termination",
+        "compliance",
+        "audit_records",
+        "privacy_security",
+        "indemnity"
+      ]
+    },
+    {
+      "id": "grant",
+      "domain": "government",
+      "name": "Grant agreement",
+      "definition": "Provides funding for an approved public or charitable purpose subject to conditions, reporting, and oversight.",
+      "typical_clause_ids": [
+        "parties",
+        "scope",
+        "fees_payment",
+        "term",
+        "termination",
+        "compliance",
+        "audit_records",
+        "governing_law"
+      ]
+    },
+    {
+      "id": "government_subcontract",
+      "domain": "government",
+      "name": "Government subcontract",
+      "definition": "Passes defined performance and regulatory duties from a prime contract to a subcontractor.",
+      "typical_clause_ids": [
+        "parties",
+        "scope",
+        "deliverables",
+        "fees_payment",
+        "term",
+        "termination",
+        "compliance",
+        "audit_records",
+        "privacy_security",
+        "indemnity"
+      ]
+    },
+    {
+      "id": "business_associate",
+      "domain": "healthcare",
+      "name": "Business associate agreement",
+      "definition": "Allocates privacy and security duties involving protected health information between covered and service entities.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "use_restriction",
+        "privacy_security",
+        "compelled_disclosure",
+        "return_destruction",
+        "audit_records",
+        "termination"
+      ]
+    },
+    {
+      "id": "provider_agreement",
+      "domain": "healthcare",
+      "name": "Healthcare provider agreement",
+      "definition": "Governs participation, payment, service, records, compliance, and quality duties of a healthcare provider.",
+      "typical_clause_ids": [
+        "parties",
+        "scope",
+        "fees_payment",
+        "term",
+        "termination",
+        "compliance",
+        "audit_records",
+        "privacy_security",
+        "indemnity"
+      ]
+    },
+    {
+      "id": "clinical_trial",
+      "domain": "healthcare",
+      "name": "Clinical trial agreement",
+      "definition": "Governs research conduct, funding, data, publication, safety, IP, confidentiality, and regulatory compliance.",
+      "typical_clause_ids": [
+        "parties",
+        "scope",
+        "fees_payment",
+        "term",
+        "termination",
+        "compliance",
+        "data_rights",
+        "privacy_security",
+        "ip_ownership",
+        "confidentiality",
+        "indemnity"
+      ]
+    },
+    {
+      "id": "data_use",
+      "domain": "healthcare",
+      "name": "Data use agreement",
+      "definition": "Sets permitted uses, safeguards, disclosures, retention, and disposition for shared data.",
+      "typical_clause_ids": [
+        "parties",
+        "definitions",
+        "use_restriction",
+        "data_rights",
+        "privacy_security",
+        "compelled_disclosure",
+        "return_destruction",
+        "term"
+      ]
+    }
+  ],
+  "clause_definitions": [
+    {
+      "id": "parties",
+      "name": "Parties",
+      "definition": "Identifies the people or entities entering the agreement and their defined roles.",
+      "aliases": [
+        "contracting parties"
+      ],
+      "review_questions": [
+        "Are legal names and capacities correct?"
+      ],
+      "domains": [
+        "all"
+      ]
+    },
+    {
+      "id": "definitions",
+      "name": "Definitions",
+      "definition": "Assigns specific meanings to capitalized or recurring terms used in the agreement.",
+      "aliases": [
+        "defined terms"
+      ],
+      "review_questions": [
+        "Are key terms complete and used consistently?"
+      ],
+      "domains": [
+        "all"
+      ]
+    },
+    {
+      "id": "scope",
+      "name": "Scope",
+      "definition": "Describes the goods, services, rights, relationship, or transaction covered by the agreement.",
+      "aliases": [
+        "services",
+        "statement of work"
+      ],
+      "review_questions": [
+        "Is the scope specific and measurable?"
+      ],
+      "domains": [
+        "commercial",
+        "employment",
+        "government"
+      ]
+    },
+    {
+      "id": "deliverables",
+      "name": "Deliverables",
+      "definition": "Identifies required work products, outputs, milestones, or items to be delivered.",
+      "aliases": [
+        "work product",
+        "milestones"
+      ],
+      "review_questions": [
+        "Are owners, dates, and specifications clear?"
+      ],
+      "domains": [
+        "commercial",
+        "government",
+        "ip_technology"
+      ]
+    },
+    {
+      "id": "acceptance",
+      "name": "Acceptance",
+      "definition": "Defines how deliverables are tested, accepted, rejected, or deemed accepted.",
+      "aliases": [
+        "acceptance testing",
+        "acceptance criteria"
+      ],
+      "review_questions": [
+        "Are criteria objective and is the review period clear?"
+      ],
+      "domains": [
+        "commercial",
+        "government",
+        "ip_technology"
+      ]
+    },
+    {
+      "id": "fees_payment",
+      "name": "Fees and payment",
+      "definition": "States prices, invoicing, payment timing, disputes, interest, and payment methods.",
+      "aliases": [
+        "charges",
+        "pricing",
+        "payment terms"
+      ],
+      "review_questions": [
+        "What is due, when, and how are disputes handled?"
+      ],
+      "domains": [
+        "commercial",
+        "employment",
+        "finance",
+        "government"
+      ]
+    },
+    {
+      "id": "term",
+      "name": "Term",
+      "definition": "States when the agreement begins and how long it remains in effect.",
+      "aliases": [
+        "duration",
+        "effective period"
+      ],
+      "review_questions": [
+        "Are the start and end rules unambiguous?"
+      ],
+      "domains": [
+        "all"
+      ]
+    },
+    {
+      "id": "renewal",
+      "name": "Renewal",
+      "definition": "Describes extension or automatic renewal and notice needed to prevent it.",
+      "aliases": [
+        "auto-renewal",
+        "extension"
+      ],
+      "review_questions": [
+        "What notice deadline prevents renewal?"
+      ],
+      "domains": [
+        "commercial",
+        "consumer",
+        "real_estate"
+      ]
+    },
+    {
+      "id": "termination",
+      "name": "Termination",
+      "definition": "Defines rights to end the agreement for breach, convenience, insolvency, or other events and any cure period.",
+      "aliases": [
+        "termination for cause",
+        "termination for convenience"
+      ],
+      "review_questions": [
+        "Who may terminate, for what reason, and on what notice?"
+      ],
+      "domains": [
+        "all"
+      ]
+    },
+    {
+      "id": "termination_effects",
+      "name": "Effects of termination",
+      "definition": "Specifies payment, transition, return, survival, and other consequences after termination.",
+      "aliases": [
+        "post-termination obligations"
+      ],
+      "review_questions": [
+        "Which duties and rights continue?"
+      ],
+      "domains": [
+        "all"
+      ]
+    },
+    {
+      "id": "confidentiality",
+      "name": "Confidentiality obligation",
+      "definition": "Restricts unauthorized use or disclosure of protected information.",
+      "aliases": [
+        "non-disclosure",
+        "secrecy"
+      ],
+      "review_questions": [
+        "Who is bound, for what information, and for how long?"
+      ],
+      "domains": [
+        "all"
+      ]
+    },
+    {
+      "id": "confidential_definition",
+      "name": "Definition of confidential information",
+      "definition": "Defines information treated as confidential, including form and marking requirements.",
+      "aliases": [
+        "protected information"
+      ],
+      "review_questions": [
+        "Does it cover oral, electronic, and derived information?"
+      ],
+      "domains": [
+        "commercial",
+        "corporate",
+        "employment",
+        "ip_technology"
+      ]
+    },
+    {
+      "id": "confidential_exclusions",
+      "name": "Confidentiality exclusions",
+      "definition": "Excludes information that is public, previously known, independently developed, or lawfully received.",
+      "aliases": [
+        "exceptions to confidentiality"
+      ],
+      "review_questions": [
+        "Are standard exclusions present and who bears proof?"
+      ],
+      "domains": [
+        "commercial",
+        "corporate",
+        "employment",
+        "ip_technology"
+      ]
+    },
+    {
+      "id": "use_restriction",
+      "name": "Permitted use restriction",
+      "definition": "Limits protected information or assets to a defined purpose.",
+      "aliases": [
+        "purpose limitation"
+      ],
+      "review_questions": [
+        "Is the allowed purpose specific?"
+      ],
+      "domains": [
+        "commercial",
+        "healthcare",
+        "ip_technology"
+      ]
+    },
+    {
+      "id": "representatives",
+      "name": "Representatives and need-to-know access",
+      "definition": "Allows limited access by personnel or advisers who need the information and are bound to protect it.",
+      "aliases": [
+        "permitted recipients"
+      ],
+      "review_questions": [
+        "Who is responsible for representative conduct?"
+      ],
+      "domains": [
+        "commercial",
+        "corporate",
+        "employment"
+      ]
+    },
+    {
+      "id": "compelled_disclosure",
+      "name": "Compelled disclosure",
+      "definition": "Addresses disclosure required by law, subpoena, court order, or government demand.",
+      "aliases": [
+        "required disclosure"
+      ],
+      "review_questions": [
+        "Is advance notice required when legally permitted?"
+      ],
+      "domains": [
+        "commercial",
+        "corporate",
+        "employment",
+        "healthcare"
+      ]
+    },
+    {
+      "id": "standard_of_care",
+      "name": "Standard of care",
+      "definition": "Sets the degree of care or safeguards required to protect information or property.",
+      "aliases": [
+        "reasonable care",
+        "security standard"
+      ],
+      "review_questions": [
+        "Is the standard objective and measurable?"
+      ],
+      "domains": [
+        "commercial",
+        "healthcare",
+        "ip_technology"
+      ]
+    },
+    {
+      "id": "return_destruction",
+      "name": "Return or destruction",
+      "definition": "Requires return, deletion, or destruction of information or property at a specified time.",
+      "aliases": [
+        "deletion",
+        "disposition"
+      ],
+      "review_questions": [
+        "Are backups, retention law, and certification addressed?"
+      ],
+      "domains": [
+        "commercial",
+        "employment",
+        "healthcare",
+        "ip_technology"
+      ]
+    },
+    {
+      "id": "survival",
+      "name": "Survival",
+      "definition": "Identifies provisions that continue after expiration or termination.",
+      "aliases": [
+        "continuing obligations"
+      ],
+      "review_questions": [
+        "Which duties survive and for how long?"
+      ],
+      "domains": [
+        "all"
+      ]
+    },
+    {
+      "id": "ip_ownership",
+      "name": "Intellectual property ownership",
+      "definition": "Allocates ownership of background materials, work product, inventions, data, or other intellectual property.",
+      "aliases": [
+        "background IP",
+        "work product ownership"
+      ],
+      "review_questions": [
+        "What is pre-existing and what is newly created?"
+      ],
+      "domains": [
+        "commercial",
+        "employment",
+        "ip_technology"
+      ]
+    },
+    {
+      "id": "license_grant",
+      "name": "License grant",
+      "definition": "Gives defined permission to use specified intellectual property subject to scope and restrictions.",
+      "aliases": [
+        "right to use"
+      ],
+      "review_questions": [
+        "Is it exclusive, transferable, sublicensable, territorial, and time-limited?"
+      ],
+      "domains": [
+        "commercial",
+        "ip_technology"
+      ]
+    },
+    {
+      "id": "data_rights",
+      "name": "Data rights",
+      "definition": "Allocates rights in supplied, generated, derived, or aggregated data.",
+      "aliases": [
+        "data ownership"
+      ],
+      "review_questions": [
+        "Who controls inputs, outputs, and derived data?"
+      ],
+      "domains": [
+        "commercial",
+        "healthcare",
+        "ip_technology"
+      ]
+    },
+    {
+      "id": "privacy_security",
+      "name": "Privacy and information security",
+      "definition": "Addresses personal-information processing and administrative, technical, or physical safeguards.",
+      "aliases": [
+        "data protection",
+        "cybersecurity"
+      ],
+      "review_questions": [
+        "Which laws, roles, data, safeguards, and incident duties apply?"
+      ],
+      "domains": [
+        "commercial",
+        "consumer",
+        "employment",
+        "government",
+        "healthcare",
+        "ip_technology"
+      ]
+    },
+    {
+      "id": "warranties",
+      "name": "Representations and warranties",
+      "definition": "States factual assurances or promises about authority, condition, quality, performance, or compliance.",
+      "aliases": [
+        "reps and warranties"
+      ],
+      "review_questions": [
+        "What is promised, qualified, and remedied?"
+      ],
+      "domains": [
+        "all"
+      ]
+    },
+    {
+      "id": "disclaimer",
+      "name": "Warranty disclaimer",
+      "definition": "Limits or excludes warranties, often including implied warranties.",
+      "aliases": [
+        "as is",
+        "disclaimer of warranties"
+      ],
+      "review_questions": [
+        "Which warranties are excluded and is the disclaimer conspicuous?"
+      ],
+      "domains": [
+        "commercial",
+        "consumer",
+        "ip_technology"
+      ]
+    },
+    {
+      "id": "indemnity",
+      "name": "Indemnification",
+      "definition": "Allocates responsibility for specified third-party claims, losses, defense, or reimbursement.",
+      "aliases": [
+        "defend and hold harmless"
+      ],
+      "review_questions": [
+        "What claims are covered and who controls the defense?"
+      ],
+      "domains": [
+        "commercial",
+        "corporate",
+        "employment",
+        "government"
+      ]
+    },
+    {
+      "id": "liability_limit",
+      "name": "Limitation of liability",
+      "definition": "Caps liability or excludes categories of damages subject to stated carve-outs.",
+      "aliases": [
+        "liability cap",
+        "excluded damages"
+      ],
+      "review_questions": [
+        "What is the cap and which claims are carved out?"
+      ],
+      "domains": [
+        "commercial",
+        "consumer",
+        "government",
+        "ip_technology"
+      ]
+    },
+    {
+      "id": "compliance",
+      "name": "Compliance with law",
+      "definition": "Requires performance consistent with identified laws, regulations, policies, or permits.",
+      "aliases": [
+        "legal compliance"
+      ],
+      "review_questions": [
+        "Are named regimes and responsibility allocations current?"
+      ],
+      "domains": [
+        "all"
+      ]
+    },
+    {
+      "id": "audit_records",
+      "name": "Audit and records",
+      "definition": "Permits review of records, controls, facilities, or compliance and sets retention duties.",
+      "aliases": [
+        "inspection rights",
+        "recordkeeping"
+      ],
+      "review_questions": [
+        "What is the scope, frequency, notice, cost, and retention period?"
+      ],
+      "domains": [
+        "commercial",
+        "finance",
+        "government",
+        "healthcare"
+      ]
+    },
+    {
+      "id": "assignment",
+      "name": "Assignment",
+      "definition": "Controls transfer of contractual rights, duties, or the agreement itself.",
+      "aliases": [
+        "transfer",
+        "change-of-control assignment"
+      ],
+      "review_questions": [
+        "Is consent required and are transactions or affiliates excepted?"
+      ],
+      "domains": [
+        "all"
+      ]
+    },
+    {
+      "id": "force_majeure",
+      "name": "Force majeure",
+      "definition": "Excuses or delays performance for defined events beyond a party's reasonable control.",
+      "aliases": [
+        "excused performance"
+      ],
+      "review_questions": [
+        "Which events qualify and what notice or mitigation is required?"
+      ],
+      "domains": [
+        "commercial",
+        "government",
+        "real_estate"
+      ]
+    },
+    {
+      "id": "dispute_resolution",
+      "name": "Dispute resolution",
+      "definition": "Sets escalation, mediation, arbitration, litigation, or other dispute procedures.",
+      "aliases": [
+        "arbitration",
+        "mediation"
+      ],
+      "review_questions": [
+        "Is the process mandatory, exclusive, and workable?"
+      ],
+      "domains": [
+        "all"
+      ]
+    },
+    {
+      "id": "governing_law",
+      "name": "Governing law and forum",
+      "definition": "Names the law and location intended to govern interpretation and disputes.",
+      "aliases": [
+        "choice of law",
+        "venue",
+        "jurisdiction"
+      ],
+      "review_questions": [
+        "Are the selected law and forum approved and practical?"
+      ],
+      "domains": [
+        "all"
+      ]
+    },
+    {
+      "id": "restrictive_covenants",
+      "name": "Restrictive covenants",
+      "definition": "Restricts competition, solicitation, hiring, or other post-relationship conduct for a defined scope and period.",
+      "aliases": [
+        "non-compete",
+        "non-solicitation",
+        "no-hire"
+      ],
+      "review_questions": [
+        "Is the restriction permitted and appropriately scoped in the relevant jurisdiction?"
+      ],
+      "domains": [
+        "commercial",
+        "corporate",
+        "employment"
+      ]
+    },
+    {
+      "id": "employment_terms",
+      "name": "Employment duties and compensation",
+      "definition": "Defines position, responsibilities, reporting, salary, bonus, equity, and benefits.",
+      "aliases": [
+        "job duties",
+        "compensation"
+      ],
+      "review_questions": [
+        "What is fixed, discretionary, conditional, or recoverable?"
+      ],
+      "domains": [
+        "employment"
+      ]
+    },
+    {
+      "id": "invention_assignment",
+      "name": "Invention assignment",
+      "definition": "Allocates rights in inventions or works created during a work relationship.",
+      "aliases": [
+        "work made for hire",
+        "proprietary inventions"
+      ],
+      "review_questions": [
+        "What creations and time periods are covered?"
+      ],
+      "domains": [
+        "employment",
+        "ip_technology"
+      ]
+    },
+    {
+      "id": "severance",
+      "name": "Severance",
+      "definition": "Provides pay or benefits associated with specified termination circumstances.",
+      "aliases": [
+        "separation pay"
+      ],
+      "review_questions": [
+        "What conditions, releases, and offsets apply?"
+      ],
+      "domains": [
+        "employment"
+      ]
+    },
+    {
+      "id": "transaction_terms",
+      "name": "Transaction price, representations, conditions, and closing",
+      "definition": "Sets consideration, factual assurances, pre-closing conditions, covenants, and completion mechanics for an acquisition or transfer.",
+      "aliases": [
+        "purchase price",
+        "closing conditions"
+      ],
+      "review_questions": [
+        "How are price, risk, conditions, deliverables, and survival allocated?"
+      ],
+      "domains": [
+        "corporate",
+        "real_estate"
+      ]
+    },
+    {
+      "id": "finance_terms",
+      "name": "Credit, collateral, default, and guaranty",
+      "definition": "Defines repayment, covenants, collateral rights, default events, and any secondary payment obligation.",
+      "aliases": [
+        "security interest",
+        "events of default",
+        "guarantee"
+      ],
+      "review_questions": [
+        "Are payment, collateral, cure, enforcement, and guarantor scope clear?"
+      ],
+      "domains": [
+        "finance"
+      ]
+    },
+    {
+      "id": "property_division",
+      "name": "Property and debt division",
+      "definition": "Allocates identified assets, liabilities, valuation dates, and transfer responsibilities between family-law parties.",
+      "aliases": [
+        "marital property",
+        "equitable distribution"
+      ],
+      "review_questions": [
+        "Are assets, debts, values, and transfer steps identified?"
+      ],
+      "domains": [
+        "family"
+      ]
+    },
+    {
+      "id": "support",
+      "name": "Support",
+      "definition": "Addresses spousal, child, or other support payment obligations and modification rules.",
+      "aliases": [
+        "maintenance",
+        "alimony",
+        "child support"
+      ],
+      "review_questions": [
+        "Are amount, duration, tax treatment, and modification standards clear?"
+      ],
+      "domains": [
+        "family"
+      ]
+    },
+    {
+      "id": "parenting",
+      "name": "Parenting arrangements",
+      "definition": "Addresses custody, decision-making, parenting time, communication, and related child-focused arrangements.",
+      "aliases": [
+        "custody",
+        "parenting plan"
+      ],
+      "review_questions": [
+        "Does the arrangement meet governing law and required child-focused review?"
+      ],
+      "domains": [
+        "family"
+      ]
+    },
+    {
+      "id": "covenants",
+      "name": "Covenants",
+      "definition": "Requires or prohibits conduct before, during, or after a transaction or relationship.",
+      "aliases": [
+        "affirmative covenant",
+        "negative covenant"
+      ],
+      "review_questions": [
+        "Are duties measurable and exceptions clear?"
+      ],
+      "domains": [
+        "corporate",
+        "finance"
+      ]
+    },
+    {
+      "id": "conditions_precedent",
+      "name": "Conditions precedent",
+      "definition": "Lists conditions that must be satisfied or waived before a duty, funding, or closing occurs.",
+      "aliases": [
+        "closing conditions"
+      ],
+      "review_questions": [
+        "Who controls satisfaction and waiver?"
+      ],
+      "domains": [
+        "corporate",
+        "finance",
+        "real_estate"
+      ]
+    },
+    {
+      "id": "insurance",
+      "name": "Insurance",
+      "definition": "Requires specified coverage, limits, endorsements, certificates, or notice of cancellation.",
+      "aliases": [
+        "coverage requirements"
+      ],
+      "review_questions": [
+        "Are coverage types and limits appropriate to the work?"
+      ],
+      "domains": [
+        "commercial",
+        "employment",
+        "government",
+        "real_estate"
+      ]
+    }
+  ],
+  "source_notes": [
+    {
+      "title": "CUAD v1",
+      "url": "https://github.com/The-Atticus-Project/cuad",
+      "use": "Commercial clause-category alignment"
+    },
+    {
+      "title": "ContractNLI",
+      "url": "https://stanfordnlp.github.io/contract-nli/",
+      "use": "NDA document-level hypothesis and evidence task design"
+    },
+    {
+      "title": "LEGAL-BERT Contracts",
+      "url": "https://huggingface.co/nlpaueb/bert-base-uncased-contracts",
+      "use": "Contract-domain encoder comparison"
+    }
+  ]
+}

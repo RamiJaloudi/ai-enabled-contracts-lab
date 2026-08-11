@@ -1,0 +1,25 @@
+{
+  "adopted_prompt": "contract_drafting_v3",
+  "active_path": "prompts/contract_drafting.md",
+  "active_sha256": "2649d609d6c300086a2053e85e8e551c1b0a4a455448e2eef9f2bd40f01d04ba",
+  "dataset_path": "prompt_evals/cases.json",
+  "dataset_sha256": "a8bc7a0f33cb053a9907d2cb3078208a32983dd188f085646db78c7ea0e0047e",
+  "evaluation_date": "2026-08-11",
+  "provider": "ollama",
+  "model": "gpt-oss:latest",
+  "temperature": 0.2,
+  "active_drafting_temperature": 0.0,
+  "context_window": 16384,
+  "max_output_tokens": 8192,
+  "targeted_cases": [
+    "draft-improve-existing-services",
+    "draft-ignore-source-injection"
+  ],
+  "baseline_mean_score": 0.797979797979798,
+  "candidate_mean_score": 1.0,
+  "mean_score_delta": 0.202020202020202,
+  "baseline_pass_rate": 0.0,
+  "candidate_pass_rate": 1.0,
+  "regressions": [],
+  "decision": "adopt"
+}

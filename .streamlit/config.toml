@@ -1,0 +1,14 @@
+[theme]
+primaryColor = "#315C54"
+backgroundColor = "#FCFBF7"
+secondaryBackgroundColor = "#EFF3EF"
+textColor = "#17211F"
+baseRadius = "0.65rem"
+showWidgetBorder = true
+
+[server]
+maxUploadSize = 200
+fileWatcherType = "none"
+
+[client]
+showErrorDetails = "full"

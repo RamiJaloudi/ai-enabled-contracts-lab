@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Install uv and Python
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: "0.12.3"
+          python-version: "3.12"
+          enable-cache: true
+
+      - name: Install CPU development environment
+        run: uv sync --locked --extra dev --extra cpu
+
+      - name: Lint
+        run: uv run --locked --extra cpu ruff check .
+
+      - name: Test
+        run: uv run --locked --extra cpu pytest
+
+      - name: Build package
+        run: uv build

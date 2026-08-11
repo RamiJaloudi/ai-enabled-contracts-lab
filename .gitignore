@@ -1,0 +1,33 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+.streamlit/secrets.toml
+.env
+artifacts/
+data/imports/
+data/curated/
+data/quarantine/
+wandb/
+*.log
+.DS_Store
+Thumbs.db
+*.egg-info/
+build/
+dist/
+site/
+docs/_rendered/
+docs/_qa/
+
+# Local-only synthetic 396-label corpus (license/provenance not documented).
+datasets/contract_clauses_all_39600.csv
+datasets/bert_contract_clause_dataset_39600/
+datasets/bert_contract_clause_dataset_39600.zip
+
+# Local master legal taxonomy experiment (provenance/license pending).
+datasets/manifest.csv
+datasets/master_taxonomy.json
+datasets/*_20000.zip
+datasets/legal_multidomain_all_fields_bundle.zip

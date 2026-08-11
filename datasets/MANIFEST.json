@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "generated": "2026-08-11",
+  "dataset": "AI-Enabled Contracts Lab CUAD derivatives",
+  "upstream": "https://github.com/The-Atticus-Project/cuad",
+  "dataset_card": "https://huggingface.co/datasets/theatticusproject/cuad-qa",
+  "license": "CC BY 4.0",
+  "transformation": "Deterministic parsing and templating over CUAD annotations; no language model generated the included targets. Classifier rows use grounded positive answer spans.",
+  "contract_overlap_verified": true,
+  "files": [
+    {
+      "path": "datasets/sample_200.jsonl",
+      "purpose": "Instruction/chat sample",
+      "bytes": 1352014,
+      "sha256": "cf1cf90f4e3c7a38f7d34497850c2d593f7059a789603384a7bb4f17b5169781",
+      "license": "CC BY 4.0",
+      "source": "The Atticus Project CUAD v1",
+      "redistributable": true,
+      "rows": 200,
+      "contracts": 173,
+      "tasks": {
+        "clause_extraction": 120,
+        "clause_qa": 75,
+        "contract_type_id": 4,
+        "missing_clause_audit": 1
+      }
+    },
+    {
+      "path": "datasets/cuad_classifier_sample.csv",
+      "purpose": "Classifier sample",
+      "bytes": 30462,
+      "sha256": "dd542310d227cc215984aa56be4a8630b5962c0d835e434211cbc9daefae503e",
+      "license": "CC BY 4.0",
+      "source": "The Atticus Project CUAD v1",
+      "redistributable": true,
+      "rows": 75,
+      "contracts": 68,
+      "labels": 25
+    },
+    {
+      "path": "datasets/clauses.csv",
+      "purpose": "Full classifier derivative",
+      "bytes": 2687407,
+      "sha256": "3b80480b5c7019c5791cc176b2175765b1e00430622a02a66394f5ed61846182",
+      "license": "CC BY 4.0",
+      "source": "The Atticus Project CUAD v1",
+      "redistributable": true,
+      "rows": 6702,
+      "contracts": 510,
+      "labels": 41
+    },
+    {
+      "path": "datasets/train.jsonl/train.jsonl",
+      "purpose": "Instruction train split",
+      "bytes": 98418690,
+      "sha256": "cd5bdf9e5ec3619617c24d74298e5f2d4697398130b57eb8c97a5742e153a2a1",
+      "license": "CC BY 4.0",
+      "source": "The Atticus Project CUAD v1",
+      "redistributable": true,
+      "rows": 14491,
+      "contracts": 408,
+      "tasks": {
+        "clause_extraction": 8260,
+        "clause_qa": 5415,
+        "contract_type_id": 408,
+        "missing_clause_audit": 408
+      }
+    },
+    {
+      "path": "datasets/val.jsonl/val.jsonl",
+      "purpose": "Instruction validation split",
+      "bytes": 11910128,
+      "sha256": "a0e1d0a931456a700a95688e79e0796834ee966429178d92ded0da34a055004f",
+      "license": "CC BY 4.0",
+      "source": "The Atticus Project CUAD v1",
+      "redistributable": true,
+      "rows": 1784,
+      "contracts": 51,
+      "tasks": {
+        "clause_extraction": 1037,
+        "clause_qa": 645,
+        "contract_type_id": 51,
+        "missing_clause_audit": 51
+      }
+    },
+    {
+      "path": "datasets/test.jsonl/test.jsonl",
+      "purpose": "Instruction test split",
+      "bytes": 11783598,
+      "sha256": "1608f3db7e71223bcb97c8b6ed8d4e3d7abaec40f4233572a1c1097f6aca6718",
+      "license": "CC BY 4.0",
+      "source": "The Atticus Project CUAD v1",
+      "redistributable": true,
+      "rows": 1733,
+      "contracts": 51,
+      "tasks": {
+        "clause_extraction": 989,
+        "clause_qa": 642,
+        "contract_type_id": 51,
+        "missing_clause_audit": 51
+      }
+    },
+    {
+      "path": "datasets/contract_taxonomy.json",
+      "purpose": "Combined contract and clause definitions",
+      "bytes": 47820,
+      "sha256": "015016e936501bdbfc036fc55f6dbf53eb23bf20c210670fee02ed09baaabc4b",
+      "license": "CC BY 4.0",
+      "source": "AI-Enabled Contracts Lab contributors",
+      "redistributable": true
+    },
+    {
+      "path": "datasets/taxonomy/contract_types.jsonl",
+      "purpose": "Contract-type definition sources",
+      "bytes": 15469,
+      "sha256": "ecfd2fa899a134fb3a0c4f68158a5036bf1c7899c1f3b40baf65f8169b9d9a86",
+      "license": "CC BY 4.0",
+      "source": "AI-Enabled Contracts Lab contributors",
+      "redistributable": true,
+      "records": 47
+    },
+    {
+      "path": "datasets/taxonomy/clause_definitions.jsonl",
+      "purpose": "Clause-definition sources",
+      "bytes": 14222,
+      "sha256": "4ec782324afc860ec31a8d5b29124cac3b7e609f99682e073031661ad1442e58",
+      "license": "CC BY 4.0",
+      "source": "AI-Enabled Contracts Lab contributors",
+      "redistributable": true,
+      "records": 45
+    }
+  ]
+}
