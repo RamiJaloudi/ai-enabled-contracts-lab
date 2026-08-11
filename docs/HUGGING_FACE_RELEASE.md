@@ -90,7 +90,49 @@ Hugging Face model cards are repository `README.md` files with metadata used for
 
 ## 6. Validate from a clean environment
 
-Download the private repository using a separately authenticated environment and repeat inference. This catches missing files and accidental reliance on the original training directory.
+Authenticate in a clean environment with an account that can read the private repository, then run
+the project downloader:
+
+```powershell
+hf auth login
+hf auth whoami
+.\.venv\Scripts\python.exe tools\download_huggingface_model.py
+```
+
+The default destination is `artifacts/models/contra-v2/`. The tool uses the credential stored by
+the official CLI; it deliberately has no token argument. It downloads only the seven reviewed
+release files, validates `config.json`, confirms the 41-label mappings are exact inverses, and loads
+the saved tokenizer and safetensors weights using local files before checking for 41 logits.
+
+Pin a tag or full commit hash when repeatability matters:
+
+```powershell
+.\.venv\Scripts\python.exe tools\download_huggingface_model.py `
+  --revision FULL_COMMIT_HASH `
+  --output artifacts\models\contra-v2
+```
+
+For a direct Hub download without the project validation checks:
+
+```powershell
+hf download rjaloudi/contra-contracts-bert-cuad-clause-classifier `
+  --local-dir artifacts\models\contra-v2
+```
+
+Transformers can also load the repository directly after `hf auth login`:
+
+```python
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
+
+repo_id = "rjaloudi/contra-contracts-bert-cuad-clause-classifier"
+tokenizer = AutoTokenizer.from_pretrained(repo_id)
+model = AutoModelForSequenceClassification.from_pretrained(repo_id)
+```
+
+See Hugging Face's official [download guide](https://huggingface.co/docs/huggingface_hub/en/guides/download)
+for `snapshot_download`, revision pinning, file filters, and local directories. A successful clean
+download catches missing repository files and accidental reliance on the original training folder.
+Do not paste an access token into a command, script, notebook, Streamlit widget, screenshot, or chat.
 
 ## 7. Make public only after review
 

@@ -1611,7 +1611,62 @@ The expected bundle contains only the reviewed model, tokenizer, configuration, 
 card files. From a clean authenticated environment, download the private repository and repeat the
 41-logit inference test.
 
-### 16.6 Consider public visibility separately
+### 16.6 Download and validate Contra v2
+
+The repository must already exist, and the signed-in account must have read access while it remains
+private. Authenticate outside Streamlit and run the project downloader:
+
+```powershell
+hf auth login
+hf auth whoami
+.\.venv\Scripts\python.exe tools\download_huggingface_model.py
+```
+
+The default output is the Git-ignored `artifacts/models/contra-v2/` directory. The downloader uses
+the credential saved by the official Hugging Face CLI and does not accept a token argument. It:
+
+- checks that at least 1 GB of disk space is available;
+- downloads only the seven reviewed Contra release files;
+- validates that required files are present and nonempty;
+- confirms that `id2label` and `label2id` contain 41 inverse mappings; and
+- loads the tokenizer and safetensors weights from local files and confirms 41 inference logits.
+
+Pin a release tag or full commit hash so later runs obtain the same files:
+
+```powershell
+.\.venv\Scripts\python.exe tools\download_huggingface_model.py `
+  --revision FULL_COMMIT_HASH `
+  --output artifacts\models\contra-v2
+```
+
+Use `--skip-inference` only when packages or memory are temporarily unavailable; file and
+configuration validation still runs. Use `--force-download` to refresh files. An inaccessible
+private repository produces a message directing the user to `hf auth login`; a bad revision,
+incomplete bundle, invalid mapping, or low-disk condition fails explicitly.
+
+The official CLI can download the repository without the project-specific checks:
+
+```powershell
+hf download rjaloudi/contra-contracts-bert-cuad-clause-classifier `
+  --local-dir artifacts\models\contra-v2
+```
+
+After `hf auth login`, Transformers can also use the stored credential and download automatically:
+
+```python
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
+
+repo_id = "rjaloudi/contra-contracts-bert-cuad-clause-classifier"
+tokenizer = AutoTokenizer.from_pretrained(repo_id)
+model = AutoModelForSequenceClassification.from_pretrained(repo_id)
+```
+
+Hugging Face documents `snapshot_download`, revision selection, filtering, and local directories at
+`https://huggingface.co/docs/huggingface_hub/en/guides/download`. Never paste a token into a script,
+command, notebook, Streamlit field, screenshot, or chat. For repeatable offline use, point
+`from_pretrained` to `artifacts/models/contra-v2/` and set `local_files_only=True`.
+
+### 16.7 Consider public visibility separately
 
 Only after independent review should visibility change. Preserve the share-alike license, data
 attribution, rare-label disclosure, human-review requirement, and statement that a public model is
@@ -1637,6 +1692,7 @@ not legal advice or proof of benchmark leadership. The complete release procedur
 | Prepare multidomain bundle | `.\.venv\Scripts\python.exe tools\prepare_legal_multidomain.py` |
 | Train Contra-Law Experimental | `.\.venv\Scripts\python.exe -m contractlab.cli train --config configs\contra-law-legalbert-1120-exp-v1.json` |
 | Prepare Contra HF bundle | `.\.venv\Scripts\python.exe tools\prepare_huggingface_model.py --version v2 --repo-id rjaloudi/contra-contracts-bert-cuad-clause-classifier` |
+| Download and validate Contra v2 | `.\.venv\Scripts\python.exe tools\download_huggingface_model.py` |
 | Export notebook | `uv run --extra cu129 contractlab export-notebook --config CONFIG.json` |
 | JupyterLab | `uv run --extra cu129 --with jupyterlab jupyter lab` |
 | Test | `uv run --extra cu129 pytest` |
