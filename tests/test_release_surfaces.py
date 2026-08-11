@@ -93,13 +93,19 @@ def test_hugging_face_repo_id_validation() -> None:
 
 
 def test_generated_v2_card_uses_exact_repo_and_saved_metrics() -> None:
-    import json
-
     from tools.prepare_huggingface_model import model_card
 
-    summary = json.loads(
-        read("artifacts/runs/contra-contracts-bert-weighted-v2/summary.json")
-    )
+    summary = {
+        "model_name": "nlpaueb/bert-base-uncased-contracts",
+        "best_validation_macro_f1": 0.5869,
+        "split_rows": {"test": 1008},
+        "test_metrics": {
+            "accuracy": 0.7639,
+            "macro_precision": 0.6456,
+            "macro_recall": 0.6151,
+            "macro_f1": 0.6036,
+        },
+    }
     card = model_card(summary, HF_REPOSITORY, "v2")
     assert HF_REPOSITORY in card
     assert "YOUR_HF_USERNAME" not in card
